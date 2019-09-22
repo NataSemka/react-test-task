@@ -4,6 +4,8 @@
 2. Run `yarn start` / `npm start`
 3. Application is available on port 3000
 
+All calculations to render charts has done in the [Components](https://github.com/NataSemka/react-test-task/tree/master/charts-app/src/views/Components) directory.
+
 # Default notes from Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
