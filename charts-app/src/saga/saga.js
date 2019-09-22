@@ -21,6 +21,10 @@ export function* chartsDataSaga() {
     const data = yield take(channel);
     if (data) {
       yield put({
+        type: "GET_LINECHART_DATA_SUCCESS",
+        data
+      });
+      yield put({
         type: "GET_BARCHART_DATA_SUCCESS",
         value: data.value || 0
       });

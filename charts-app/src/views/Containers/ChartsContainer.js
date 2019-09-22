@@ -1,13 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
 import BarChartComponent from "../Components/BarChartComponent";
+import LineChartComponent from "../Components/LineChartComponent";
 
 class ChartsContainer extends React.Component {
   render() {
-    const { barChartData } = this.props;
+    const { barChartData, lineChartData } = this.props;
 
     return (
-      <div>
+      <div className="charts-container">
+        <LineChartComponent data={lineChartData} />
         <BarChartComponent value={barChartData} />
       </div>
     );
@@ -15,9 +17,10 @@ class ChartsContainer extends React.Component {
 }
 
 function mapStateToProps(state) {
-  const { barChartData } = state;
+  const { barChartData, lineChartData } = state;
   return {
-    barChartData
+    barChartData,
+    lineChartData
   };
 }
 export default connect(mapStateToProps)(ChartsContainer);

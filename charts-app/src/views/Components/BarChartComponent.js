@@ -49,7 +49,7 @@ class BarChartComponent extends React.Component {
     }
 
     this.setState({ valueRanges });
-  }
+  };
 
   isBetween = (value, min, max) => {
     return value >= min && value <= max;
@@ -59,7 +59,8 @@ class BarChartComponent extends React.Component {
     const { valueRanges } = this.state;
     let dataSource = {
       chart: {
-        caption: "The amount of numbers in each numbers range",
+        caption: "The amount of numbers",
+        subcaption: "(in each numbers range)",
         xaxisname: "range categories",
         yaxisname: "the amount of numbers",
         plottooltext: "<b>$value</b> numbers within <b>$label</b> range",
