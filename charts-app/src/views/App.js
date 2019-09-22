@@ -1,11 +1,11 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "../styles/App.css";
+import ChartsContainer from "./Containers/ChartsContainer";
 
-function App() {
-  return (
-    <div className="App">
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return <ChartsContainer />;
+  }
 }
 
 export default App;

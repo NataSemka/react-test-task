@@ -1,27 +1,22 @@
 module.exports = {
   env: {
     browser: true,
-    es6: true,
+    es6: true
   },
-  extends: [
-    'airbnb',
-  ],
+  extends: ["airbnb"],
   globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
+    Atomics: "readonly",
+    SharedArrayBuffer: "readonly"
   },
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
     ecmaVersion: 2018,
-    sourceType: 'module',
+    sourceType: "module"
   },
-  plugins: [
-    'react',
-    'prettier'
-  ],
-  "rules": {
+  plugins: ["react", "prettier"],
+  rules: {
     "no-console": 0, // disallow use of console (off by default in the node environment)
     "comma-dangle": 0, // disallow trailing commas in object literals
     "no-cond-assign": 1, // disallow assignment in conditional expressions
@@ -48,14 +43,11 @@ module.exports = {
     "valid-typeof": 1, // Ensure that the results of typeof are compared against a valid string
     "no-var": 1, // discouraging the use of var and encouraging the use of const or let instead
     "prefer-const": 2, // suggest using const
-    "arrow-body-style": [
-      2,
-      "as-needed"
-    ], // require braces in arrow function body
+    "arrow-body-style": [2, "as-needed"], // require braces in arrow function body
     "no-param-reassign": [
       2,
       {
-        "props": false
+        props: false
       }
     ], // disallow reassignment of function parameters
     "space-before-function-paren": 0, // disallow a space before function parenthesis
@@ -68,15 +60,12 @@ module.exports = {
     // Best Practices
     // These are rules designed to prevent you from making mistakes. They either prescribe a better way of doing something or help you avoid footguns.
     "block-scoped-var": 0, // treat var statements as if they were block scoped (off by default)
-    "complexity": 0, // specify the maximum cyclomatic complexity allowed in a program (off by default)
+    complexity: 0, // specify the maximum cyclomatic complexity allowed in a program (off by default)
     "consistent-return": 0, // require return statements to either always or never specify values
-    "curly": 1, // specify curly brace conventions for all control statements
+    curly: 1, // specify curly brace conventions for all control statements
     "default-case": 0, // require default case in switch statements (off by default)
     "dot-notation": 1, // encourages use of dot notation whenever possible
-    "eqeqeq": [
-      1,
-      "allow-null"
-    ], // require the use of === and !==
+    eqeqeq: [1, "allow-null"], // require the use of === and !==
     "guard-for-in": 0, // make sure for-in loops have an if statement (off by default)
     "no-alert": 1, // disallow the use of alert, confirm, and prompt
     "no-caller": 1, // disallow use of arguments.caller or arguments.callee
@@ -110,11 +99,11 @@ module.exports = {
     "no-void": 1, // disallow use of void operator (off by default)
     "no-warning-comments": 0, // disallow usage of configurable warning terms in comments": 1,                                    // e.g. TODO or FIXME (off by default)
     "no-with": 1, // disallow use of the with statement
-    "radix": 1, // require use of the second argument for parseInt() (off by default)
+    radix: 1, // require use of the second argument for parseInt() (off by default)
     "semi-spacing": 1, // require a space after a semi-colon
     "vars-on-top": 0, // requires to declare all vars on top of their containing scope (off by default)
     "wrap-iife": 0, // require immediate function invocation to be wrapped in parentheses (off by default)
-    "yoda": 1, // require or disallow Yoda conditions
+    yoda: 1, // require or disallow Yoda conditions
     // Variables
     // These rules have to do with variable declarations.
     "no-catch-shadow": 1, // disallow the catch clause parameter name being the same as a variable in the outer scope (off by default in the node environment)
@@ -123,15 +112,8 @@ module.exports = {
     "no-shadow": [
       2,
       {
-        "hoist": "all",
-        "allow": [
-          "resolve",
-          "reject",
-          "done",
-          "next",
-          "err",
-          "error"
-        ]
+        hoist: "all",
+        allow: ["resolve", "reject", "done", "next", "err", "error"]
       }
     ], // disallow declaration of variables already declared in the outer scope
     "no-shadow-restricted-names": 1, // disallow shadowing of names such as arguments
@@ -141,9 +123,9 @@ module.exports = {
     "no-unused-vars": [
       1,
       {
-        "vars": "all",
-        "args": "none",
-        "argsIgnorePattern": "res|next|^err"
+        vars: "all",
+        args: "none",
+        argsIgnorePattern: "res|next|^err"
       }
     ], // disallow declaration of variables that are not used in the code
     "no-use-before-define": 0, // disallow use of variables before they are defined
@@ -160,18 +142,12 @@ module.exports = {
     // These rules are purely matters of style and are quite subjective.
     "key-spacing": 0,
     "keyword-spacing": 1, // enforce spacing before and after keywords
-    "jsx-quotes": [
-      1,
-      "prefer-double"
-    ],
+    "jsx-quotes": [1, "prefer-double"],
     "comma-spacing": 0,
     "no-multi-spaces": 0,
     "brace-style": 0, // enforce one true brace style (off by default)
-    "camelcase": 0, // require camel case names
-    "consistent-this": [
-      1,
-      "self"
-    ], // enforces consistent naming when capturing the current execution context (off by default)
+    camelcase: 0, // require camel case names
+    "consistent-this": [1, "self"], // enforces consistent naming when capturing the current execution context (off by default)
     "eol-last": 1, // enforce newline at the end of file, with no multiple empty lines
     "func-names": 0, // require function expressions to have a name (off by default)
     "func-style": 0, // enforces use of function declarations or expressions (off by default)
@@ -186,16 +162,16 @@ module.exports = {
     "no-trailing-spaces": 1, // disallow trailing whitespace at the end of lines
     "no-underscore-dangle": 0, // disallow dangling underscores in identifiers
     "no-mixed-spaces-and-tabs": 1, // disallow mixed spaces and tabs for indentation
-    "quotes": [
+    quotes: [
       2,
       "single",
       {
-        "avoidEscape": true,
-        "allowTemplateLiterals": true
+        avoidEscape: true,
+        allowTemplateLiterals: true
       }
     ], // specify whether double or single quotes should be used
     "quote-props": 0, // require quotes around object literal property names (off by default)
-    "semi": 1, // require or disallow use of semicolons instead of ASI
+    semi: 1, // require or disallow use of semicolons instead of ASI
     "sort-vars": 0, // sort variables within the same declaration block (off by default)
     "space-in-brackets": 0, // require or disallow spaces inside brackets (off by default)
     "space-in-parens": 0, // require or disallow spaces inside parentheses (off by default)
@@ -203,8 +179,8 @@ module.exports = {
     "space-unary-ops": [
       1,
       {
-        "words": true,
-        "nonwords": false
+        words: true,
+        nonwords: false
       }
     ], // require or disallow spaces before/after unary operators (words on by default, nonwords off by default)
     "max-nested-callbacks": 0, // specify the maximum depth callbacks can be nested (off by default)
@@ -244,7 +220,7 @@ module.exports = {
     // The following rules are made available via `eslint-plugin-import`.
     "import/prefer-default-export": 0, // disallow named export when there is only a single export from a module
     "import/no-named-as-default": 0,
-    "import": 0,
+    import: 0,
     "import/no-dynamic-require": 0, // forbid require() calls with expressions
     "import/extensions": 0, // ensure consistent use of file extension within the import path
     // JSX-a11y Plugin
@@ -253,10 +229,7 @@ module.exports = {
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
+        extensions: [".js", ".jsx"]
       }
     ], // restrict file extensions that may contain JSX
     "jsx-a11y/click-events-have-key-events": 0, // Enforce onClick is accompanied by at least one of the following: onKeyUp, onKeyDown, onKeyPress.
@@ -267,9 +240,7 @@ module.exports = {
     "jsx-a11y/anchor-is-valid": [
       "warn",
       {
-        "aspects": [
-          "invalidHref"
-        ]
+        aspects: ["invalidHref"]
       }
     ],
     "jsx-a11y/label-has-for": 0, // DEPRECATED! Enforce label tags have associated control
@@ -279,10 +250,10 @@ module.exports = {
     "prettier/prettier": [
       "error",
       {
-        "trailingComma": "all",
-        "singleQuote": true,
-        "printWidth": 80,
+        trailingComma: "all",
+        singleQuote: true,
+        printWidth: 80
       }
-    ],
-  },
+    ]
+  }
 };
