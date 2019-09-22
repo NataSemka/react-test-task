@@ -1,5 +1,5 @@
 import React from "react";
-import { Toast, Form, Row, Col, Container } from 'react-bootstrap';
+import { Toast, Form, Row, Col, Container } from "react-bootstrap";
 
 class AlertThresholdComponent extends React.Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class AlertThresholdComponent extends React.Component {
     };
   }
   componentDidUpdate(prevProps) {
-    const { show, threshold } = this.state;
+    const { show } = this.state;
     const { number } = this.props;
     if (prevProps.number !== number && show) {
       this.setState({ show: false });
@@ -20,9 +20,9 @@ class AlertThresholdComponent extends React.Component {
     const { number } = this.props;
     this.setState({
       threshold: e.target.value,
-      show: number > parseInt(e.target.value),
-    })
-  }
+      show: number > parseInt(e.target.value)
+    });
+  };
   render() {
     const { threshold, show } = this.state;
     const { number } = this.props;
@@ -32,11 +32,15 @@ class AlertThresholdComponent extends React.Component {
           <Col md={{ span: 4, offset: 4 }}>
             <Form.Group>
               <Form.Label>Alert threshold</Form.Label>
-              <Form.Control type="text" value={threshold} onChange={this.handleChange} />
+              <Form.Control
+                type="text"
+                value={threshold}
+                onChange={this.handleChange}
+              />
             </Form.Group>
             <Toast show={show} autohide>
               <Toast.Body>
-                {typeof number === 'number' && Math.round(number)}
+                {typeof number === "number" && Math.round(number)}
               </Toast.Body>
             </Toast>
           </Col>

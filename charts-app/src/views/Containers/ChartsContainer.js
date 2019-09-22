@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import BarChartComponent from "../Components/BarChartComponent";
 import LineChartComponent from "../Components/LineChartComponent";
-import AlertThresholdComponent from '../Components/AlertThreshold';
+import AlertThresholdComponent from "../Components/AlertThreshold";
 
 class ChartsContainer extends React.Component {
   render() {
