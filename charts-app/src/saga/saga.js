@@ -26,7 +26,7 @@ export function* chartsDataSaga() {
       });
       yield put({
         type: "GET_BARCHART_DATA_SUCCESS",
-        value: data.value || 0
+        value: data.value
       });
     }
   }

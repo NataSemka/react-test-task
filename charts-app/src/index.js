@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 import "./styles/index.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import App from "./views/App";
 import * as serviceWorker from "./serviceWorker";
 
