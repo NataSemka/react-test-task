@@ -35,3 +35,10 @@ Charts should be updated in real time. **Please**, consider code style best prac
     - the payload format is `{ value: <float>, timestamp: <integer> }`
 
 # Good luck!
+
+# Project setup (Frontend)
+
+1. Please, switch to the /charts-app directory
+2. Run `yarn` / `npm install`
+3. Run `yarn start` / `npm start`
+4. Application is available on port 3000
