@@ -33,7 +33,7 @@ class LineChartComponent extends React.Component {
   };
   getValue = val => {
     if (!val) return 0;
-    return Math.round(val).toString();
+    return Math.round(val);
   };
   updateDataSource = (time, value) => {
     const { category, data } = this.state;
