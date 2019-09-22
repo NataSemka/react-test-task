@@ -28,27 +28,26 @@ class BarChartComponent extends React.Component {
       this.calculateAmountOfNumbers(value, valueRanges);
     }
   }
-
+  updateValueRanges = (value, range, valueRanges) => {
+    let newValue = valueRanges.get(range);
+    newValue.push(value);
+    valueRanges.set(range, newValue);
+    return valueRanges;
+  };
   calculateAmountOfNumbers = (value, valueRanges) => {
     for (let range of valueRanges.keys()) {
       const min = range[0];
       const max = range[1];
+      let updatedRanges = new Map(valueRanges);
       if (this.isBetween(value, min, max)) {
-        let newValue = valueRanges.get(range);
-        newValue.push(value);
-        valueRanges.set(range, newValue);
+        updatedRanges = this.updateValueRanges(value, range, updatedRanges);
       } else if (value > 100) {
-        let newValue = valueRanges.get("100 <");
-        newValue.push(value);
-        valueRanges.set("100 <", newValue);
+        updatedRanges = this.updateValueRanges(value, range, updatedRanges);
       } else if (value < -100) {
-        let newValue = valueRanges.get("< -100");
-        newValue.push(value);
-        valueRanges.set("< -100", newValue);
+        updatedRanges = this.updateValueRanges(value, range, updatedRanges);
       }
+      this.setState({ valueRanges: updatedRanges });
     }
-
-    this.setState({ valueRanges });
   };
 
   isBetween = (value, min, max) => {
@@ -70,7 +69,7 @@ class BarChartComponent extends React.Component {
       data: [
         {
           label: "< -100",
-          value: valueRanges.get("< -100").length
+          value: Object.fromEntries(valueRanges)["< -100"].length
         },
         {
           label: "-100 - -50",
@@ -90,7 +89,7 @@ class BarChartComponent extends React.Component {
         },
         {
           label: "100 <",
-          value: valueRanges.get("100 <").length
+          value: Object.fromEntries(valueRanges)["100 <"].length
         }
       ]
     };
